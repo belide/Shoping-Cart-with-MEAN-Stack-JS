@@ -1,0 +1,22 @@
+html
+  head
+    title= title
+  body
+   div 
+   h2= message
+   form(action = "/allBlogs/createBlogs", method = "POST")
+         div
+            label(for = "Name") Name:
+            input(name = "author" value = "")
+         br
+         div
+            label(for = "title") Title:
+            input(name = "title" value = "")
+         br
+         div
+            label(for = "blogContent") Content:
+            textarea(name = "blogContent" value = "")
+         br
+     
+         button(type = "submit") Post
+  

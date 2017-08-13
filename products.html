@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CartAdda | India N0 1 Carting Commuity</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="http://www.clker.com/cliparts/x/6/b/j/h/z/shopping-cart-md.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://cdn.rawgit.com/snapjay/ngCart/0.0.3-rc.2/dist/ngCart.js"></script>
+  <script type="text/javascript">
+    var myApp = angular.module('myApp',['ngCart']);
+
+myApp.controller ('myCtrl', ['$scope', '$http', 'ngCart', function($scope, $http, ngCart) {
+    ngCart.setTaxRate(7.5);
+    ngCart.setShipping(2.99);    
+}]);
+  
+  </script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    .navbar-brand {
+    float: left;
+    height: 66px;
+    padding: 0px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+ footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+hr {
+    margin:40px 0;
+} 
+h3 { color:#1758AA}
+h3 span {font-size:14px; display:block;}
+span[ng-click] {
+        cursor: pointer;
+    }
+    .image-body{
+      height: 150px;
+    }
+  </style>
+</head>
+<body ng-app="myApp" onload="checkSession()">
+<!-- 
+<div class="jumbotron1">
+  <div class="container text-center">
+    <h1>Cart Adda</h1>      
+    <p>Mission, Vission & Values</p>
+  </div>
+</div> -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="http://localhost:8080/"><img src="http://www.clker.com/cliparts/x/6/b/j/h/z/shopping-cart-md.png" style="width: 65px;height: 65px;" /></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="http://localhost:8080/">Products</a></li>
+        <li><a href="http://localhost:8080/users/signup">SignUp</a></li>
+        <li><a href="http://localhost:8080/users/login">LogIn</a></li>
+        <li><a href="http://localhost:8080/users/Contact">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <input type="hidden" value="" id="user">
+        <li><a href="http://localhost:8080/users/dashboard"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li data-toggle="modal" data-target="#myModal"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" ng-controller="myCtrl">    
+  <div class="row">
+    <div ng-controller="myCtrl">
+
+
+
+<div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">DEAL OF THE DAY</div>
+        <div class="panel-body"><img src="http://images.citywebindia.com/Advertisement/mathuraweb_b069436f-a_17-02-2016090414.jpg" class="img-responsive image-body" style="width:100%" alt="Image"></div>
+        <div class="panel-footer" ><ngcart-addtocart id="item1" name="My Item #1" price="999" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">DEAL OF THE DAY</div>
+        <div class="panel-body"><img src="http://ecx.images-amazon.com/images/I/418KP8VfqcL._SY450_.jpg" class="img-responsive image-body" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><ngcart-addtocart id="item2" name="My Item #2" price="499" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading">DEAL OF THE DAY</div>
+        <div class="panel-body"><img src="http://ecx.images-amazon.com/images/I/61shyF063PL._SY355_.jpg" class="img-responsive image-body" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><ngcart-addtocart id="item3" name="My Item #3" price="9999" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart></div>
+      </div>
+    </div>
+
+</div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">DEAL OF THE MONTH</div>
+        <div class="panel-body"><img src="http://www.anemaindia.com/i/mobile-apps.jpg" class="img-responsive image-body" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><ngcart-addtocart id="item4" name="My Item #4" price="17000" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">DEAL OF THE MONTH</div>
+        <div class="panel-body"><img src="http://ecx.images-amazon.com/images/I/81UIr7OrEsL._UX395_.jpg" class="img-responsive image-body" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><ngcart-addtocart id="item5" name="My Item #5" price="99" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart></div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">DEAL OF THE MONTH</div>
+        <div class="panel-body"><img src="http://ecx.images-amazon.com/images/I/51Cv9JVdcsL._UY395_.jpg" class="img-responsive image-body" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><ngcart-addtocart id="item6" name="My Item #6" price="299" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart></div>
+      </div>
+    </div>
+  </div>
+<!-- Trigger the modal with a button -->
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Check your items to Proceed!!!</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row cart">
+
+<div style="padding-left: 10px;">
+    <h3>Cart Items</h3>
+
+    <ngcart-cart></ngcart-cart>
+   
+    </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+      <div style="float: left;">
+      <ngcart-summary></ngcart-summary>
+        
+      </div>
+      <div style="float: left;text-align: center;">
+      <ngcart-checkout service="paypal" settings="payPalSettings"></ngcart-checkout>
+        
+      </div>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  </div>
+<script type="text/ng-template" id="template/ngCart/summary.html"><div class="row">
+ 
+    <div class="col-md-6">{{ ngCart.getTotalItems() }}
+        <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+        <br />{{ ngCart.totalCost() | currency }}
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="template/ngCart/cart.html">
+<div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
+    Your cart is empty
+</div>
+
+<div class="table-responsive col-lg-12" ng-show="ngCart.getTotalItems() > 0">
+
+    <table class="table table-striped ngCart cart">
+
+        <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr ng-show="ngCart.getTax()">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tax ({{ ngCart.getTaxRate() }}%):</td>
+            <td>{{ ngCart.getTax() | currency }}</td>
+        </tr>
+        <tr ng-show="ngCart.getShipping()">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Shipping:</td>
+            <td>{{ ngCart.getShipping() | currency }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total:</td>
+            <td>{{ ngCart.totalCost() | currency }}</td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr ng-repeat="item in ngCart.getCart().items track by $index">
+            <td><span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove"></span></td>
+
+            <td>{{ item.getName() }}</td>
+            <td><span class="glyphicon glyphicon-minus" ng-class="{'disabled':item.getQuantity()==1}"
+                      ng-click="item.setQuantity(-1, true)"></span>&nbsp;&nbsp;
+                {{ item.getQuantity() | number }}&nbsp;&nbsp;
+                <span class="glyphicon glyphicon-plus" ng-click="item.setQuantity(1, true)"></span></td>
+            <td>{{ item.getPrice() | currency}}</td>
+            <td>{{ item.getTotal() | currency }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</script>
+
+<script type="text/ng-template" id="template/ngCart/addtocart.html"><div ng-hide="attrs.id">
+    <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
+
+</div>
+<div ng-show="attrs.id">
+    <div>
+        <span ng-show="quantityMax">
+            <select name="quantity" id="quantity" ng-model="q"
+                    ng-options=" v for v in qtyOpt"></select>
+        </span>
+        <a class="btn btn-sm btn-primary"
+           ng-click="ngCart.addItem(id, name, price, q, data)"
+           ng-transclude></a>
+    </div>
+    <mark  ng-show="inCart()">
+        This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+    </mark>
+</div>
+</script>
+
+<script type="text/ng-template" id="template/ngCart/checkout.html">
+    
+<div ng-if="service=='http' || service == 'log'">
+    <button class="btn btn-primary" ng-click="checkout()" ng-disabled="!ngCart.getTotalItems()" ng-transclude>Checkout</button>
+</div>
+
+
+<div ng-if="service=='paypal'">
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="ngCart.getTotalItems()">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="{{ settings.paypal.business }}">
+        <input type="hidden" name="lc" value="CA">
+        <input type="hidden" name="item_name" value="{{ settings.paypal.item_name }}">
+        <input type="hidden" name="item_number" value="{{ settings.paypal.item_number }}">
+        <input type="hidden" name="amount" value="{{ ngCart.getSubTotal()}}">
+        <input type="hidden" name="currency_code" value="{{ settings.paypal.currency_code }}">
+        <input type="hidden" name="button_subtype" value="services">
+        <input type="hidden" name="no_note" value="0">
+        <input type="hidden" name="tax_rate" value="{{ ngCart.getTaxRate()}}">
+        <input type="hidden" name="shipping" value="{{ ngCart.getShipping()}}">
+        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+</div>
+
+    
+</script>
+</div>
+    
+
+</div>
+<footer class="container-fluid text-center">
+  <h2> &copy; ChandraShekar Mungi</h2>
+</footer>
+</body>
+</html>
